@@ -7,7 +7,7 @@ export default function MyCarousel() {
   return (
     <Carousel>
       <div>
-        <img src={banner} />
+        <img src={banner} alt="Banner" />
       </div>
       <div>
         <h2>Imagen 2</h2>
