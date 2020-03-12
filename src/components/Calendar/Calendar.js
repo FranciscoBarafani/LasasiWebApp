@@ -1,5 +1,8 @@
+//Essentials
 import React from "react";
 import "./Calendar.scss";
+
+//This components renders a google calendar shared with a Public Address
 
 export default function MyCalendar(props) {
   const { source } = props;

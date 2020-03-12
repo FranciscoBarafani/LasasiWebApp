@@ -1,6 +1,10 @@
+//Essentials
 import React from "react";
-import { Form, Button, Input } from "antd";
 import "./ContactForm.scss";
+//Components
+import { Form, Button, Input } from "antd";
+
+//TODO: Implement the email sending function
 
 export default function ContactForm() {
   //Label Layout

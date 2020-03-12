@@ -1,5 +1,8 @@
+//Essentials
 import React from "react";
 import "./Link.scss";
+
+//This component renders small boxes with a Link
 
 export default function MyLink(props) {
   const { name, address } = props;

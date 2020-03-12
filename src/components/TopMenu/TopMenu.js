@@ -1,6 +1,10 @@
+//Essentials
 import React from "react";
+import "./TopMenu.scss";
+//Components
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
+//Assets / Antd Icons
 import {
   HomeOutlined,
   CalendarOutlined,
@@ -9,7 +13,8 @@ import {
   InfoCircleOutlined,
   MailOutlined
 } from "@ant-design/icons";
-import "./TopMenu.scss";
+
+//This component renders the top menu with the asigned links
 
 export default function TopMenu() {
   return (

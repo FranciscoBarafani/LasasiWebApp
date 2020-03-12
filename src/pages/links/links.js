@@ -1,5 +1,7 @@
+//Essentials
 import React from "react";
 import "./links.scss";
+//Components
 import MyLink from "../../components/Link";
 
 export default function Links() {

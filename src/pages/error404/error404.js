@@ -1,6 +1,8 @@
+//Essentials
 import React from "react";
-import { Link } from "react-router-dom";
 import "./error404.scss";
+//Components
+import { Link } from "react-router-dom";
 
 export default function Error404() {
   return (

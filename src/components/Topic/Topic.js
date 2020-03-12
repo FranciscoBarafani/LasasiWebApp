@@ -1,9 +1,13 @@
+//Essentials
 import React from "react";
 import "./Topic.scss";
 
-export default function Topic(props) {
-  const { title, image, alt, body, author } = props;
+//This component renders a box with a Topic
 
+export default function Topic(props) {
+  const {
+    topic: { title, image, alt, body, author }
+  } = props;
   return (
     <div className="topic">
       <h1>{title}</h1>

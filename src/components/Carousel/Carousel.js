@@ -1,7 +1,10 @@
+//Essentials
 import React from "react";
-import { Carousel } from "antd";
-import banner from "../../assets/images/LasasiBanner.jpg";
 import "./Carousel.scss";
+//Components
+import { Carousel } from "antd";
+//Assets
+import banner from "../../assets/images/LasasiBanner.jpg";
 
 export default function MyCarousel() {
   return (

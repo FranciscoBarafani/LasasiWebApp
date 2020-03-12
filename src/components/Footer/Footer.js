@@ -1,5 +1,8 @@
+//Essentials
 import React from "react";
 import "./Footer.scss";
+
+//This component renders the footer for the whole webpage
 
 export default function MyFooter() {
   return (
