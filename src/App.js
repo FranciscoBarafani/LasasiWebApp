@@ -14,6 +14,7 @@ import Home from "./pages/home";
 import Links from "./pages/links";
 import Topics from "./pages/topics";
 import Error404 from "./pages/error404";
+import Admin from "./pages/admin";
 
 export default function App() {
   const { Content, Footer } = Layout;
@@ -42,6 +43,9 @@ export default function App() {
             </Route>
             <Route path="/topics" exact={true}>
               <Topics />
+            </Route>
+            <Route path="/admin" exact={true}>
+              <Admin />
             </Route>
             <Route path="*">
               <Error404 />

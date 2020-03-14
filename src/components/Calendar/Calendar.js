@@ -9,6 +9,7 @@ export default function MyCalendar(props) {
   return (
     <div className="calendar">
       <iframe
+        title="Calendario"
         src={source}
         width="800"
         height="600"
