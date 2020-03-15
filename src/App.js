@@ -26,25 +26,25 @@ export default function App() {
           <MyCarousel />
           <TopMenu />
           <Switch>
-            <Route path="/about" exact={true}>
+            <Route path="/about">
               <About />
             </Route>
-            <Route path="/contact" exact={true}>
+            <Route path="/contact">
               <Contact />
             </Route>
-            <Route path="/events" exact={true}>
+            <Route path="/events">
               <Events />
             </Route>
             <Route path="/" exact={true}>
               <Home />
             </Route>
-            <Route path="/links" exact={true}>
+            <Route path="/links">
               <Links />
             </Route>
-            <Route path="/topics" exact={true}>
+            <Route path="/topics">
               <Topics />
             </Route>
-            <Route path="/admin" exact={true}>
+            <Route path="/admin">
               <Admin />
             </Route>
             <Route path="*">

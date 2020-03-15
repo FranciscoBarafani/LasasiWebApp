@@ -1,11 +1,11 @@
 //Essentials
 import React from "react";
 import "./admin.scss";
+import { Switch, Route } from "react-router-dom";
 //Components
 import SideMenu from "../../components/SideMenu";
-
-//Forms
-import NewTopicForm from "../../forms/NewTopic";
+import TopicsManager from "../../components/TopicsManager";
+import LinksManager from "../../components/LinksManager";
 
 export default function Admin() {
   return (
@@ -14,7 +14,14 @@ export default function Admin() {
         <SideMenu />
       </div>
       <div className="content">
-        <NewTopicForm />
+        <Switch>
+          <Route path="/admin/manage-topics">
+            <TopicsManager />
+          </Route>
+          <Route path="/admin/manage-links">
+            <LinksManager />
+          </Route>
+        </Switch>
       </div>
     </div>
   );
