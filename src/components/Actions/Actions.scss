@@ -1,0 +1,10 @@
+.actions {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  .ant-btn {
+    margin: 1px 5px 1px 5px;
+  }
+}
