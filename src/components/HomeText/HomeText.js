@@ -2,6 +2,8 @@
 import React from "react";
 import "./HomeText.scss";
 
+//This components renders the text for the Home Page
+
 export default function HomeText() {
   //Texts
   const text = {

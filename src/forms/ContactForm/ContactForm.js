@@ -5,7 +5,6 @@ import "./ContactForm.scss";
 import { Form, Button, Input } from "antd";
 
 //TODO: Implement the email sending function
-
 export default function ContactForm() {
   //Label Layout
   const layout = {
@@ -17,9 +16,16 @@ export default function ContactForm() {
     wrapperCol: { offset: 8, span: 16 }
   };
 
+  //OnFinish function is executed when the form is finished and correct,
+  //It automatically brings all the values in the inputs
+  //TODO: Post values to backend
+  const onFinish = values => {
+    console.log(values);
+  };
+
   return (
     <div className="contact-form">
-      <Form name="contactForm" {...layout}>
+      <Form name="contactForm" {...layout} onFinish={onFinish}>
         <Form.Item
           label="Nombre y Apellido"
           name="name"
@@ -57,7 +63,9 @@ export default function ContactForm() {
           <Input.TextArea placeholder="Mensaje" style={{ height: 100 }} />
         </Form.Item>
         <Form.Item {...tailLayout}>
-          <Button type="primary">Enviar</Button>
+          <Button type="primary" htmlType="submit">
+            Enviar
+          </Button>
         </Form.Item>
       </Form>
     </div>

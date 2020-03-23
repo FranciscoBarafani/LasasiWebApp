@@ -1,19 +1,19 @@
 .topics-manager {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
+  flex-direction: row;
 
   .topics-manager-dashboard {
-    align-items: center;
+    align-items: left;
     justify-content: center;
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
 
     .ant-table-wrapper {
       margin-top: 5px;
-      width: 50%;
+      width: 100%;
       border: 2px solid rgba(62, 62, 62, 0.3);
       padding: 20px;
       background: white;
