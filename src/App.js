@@ -1,5 +1,8 @@
 import React from "react";
 import { Layout } from "antd";
+//Firebase
+import firebase from "./utils/FireBase";
+import "firebase/auth";
 //El as es para cambiar el nombre del componente importado
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Importacion de Componentes
