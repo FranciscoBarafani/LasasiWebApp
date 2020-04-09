@@ -12,6 +12,7 @@ import {
   LogoutOutlined,
 } from "@ant-design/icons";
 
+//This component renders the side menu
 export default function SideMenu(props) {
   const { logOut } = props;
   return (

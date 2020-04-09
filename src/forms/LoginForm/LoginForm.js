@@ -4,13 +4,17 @@ import "./LoginForm.scss";
 //Components
 import { Form, Input, Button } from "antd";
 
+//This component renders the Login Form
+
 export default function LoginForm(props) {
   const { onSubmit, isLoading } = props;
 
+  //This function is executed when the form is finished
   const onFinish = (values) => {
     onSubmit(values.email, values.password);
   };
 
+  //Login Form
   return (
     <div className="login">
       <div className="login__form">
