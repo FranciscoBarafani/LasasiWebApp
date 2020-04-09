@@ -9,10 +9,11 @@ import {
   EditOutlined,
   LinkOutlined,
   SettingOutlined,
-  LogoutOutlined
+  LogoutOutlined,
 } from "@ant-design/icons";
 
-export default function SideMenu() {
+export default function SideMenu(props) {
+  const { logOut } = props;
   return (
     <div className="side-menu">
       <Menu mode="vertical-left">
@@ -30,7 +31,7 @@ export default function SideMenu() {
         </Menu.Item>
         <Menu.Item key="4">
           <LogoutOutlined />
-          Cerrar Sesion
+          <span onClick={logOut}>Cerrar Sesion</span>
         </Menu.Item>
       </Menu>
     </div>
