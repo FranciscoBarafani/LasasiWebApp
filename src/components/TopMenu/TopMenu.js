@@ -11,7 +11,7 @@ import {
   FileTextOutlined,
   LinkOutlined,
   InfoCircleOutlined,
-  MailOutlined
+  MailOutlined,
 } from "@ant-design/icons";
 
 //This component renders the top menu with the asigned links

@@ -1,10 +1,18 @@
-.contact-form {
+.contact-us {
+  display: flex;
   background: white;
   border-radius: 10px;
-  width: 40%;
   border: solid 2px rgba(165, 165, 165, 0.5);
+  align-items: center;
+  justify-content: center;
 
-  .ant-form {
-    padding: 30px;
+  &__layout {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    &-logo {
+      height: 30px;
+      width: 30px;
+    }
   }
 }

@@ -26,22 +26,36 @@ export default function HomeText() {
     g:
       "La membresía es también una excelente plataforma para darse a conocer a la comunidad aeronáutica.",
     outro:
-      "En síntesis, LASASI/ ISASI es el lugar en donde confluyen quienes se dedican, día a día, a contribuir en la mejora de la seguridad operacional de la aviación en la región y del mundo; a través de la investigación de accidentes de aviación."
+      "En síntesis, LASASI/ ISASI es el lugar en donde confluyen quienes se dedican, día a día, a contribuir en la mejora de la seguridad operacional de la aviación en la región y del mundo; a través de la investigación de accidentes de aviación.",
   };
   return (
     <div className="home-text">
       <h1>LASASI</h1>
       <p>{text.intro}</p>
       <p>{text.secondLine}</p>
-      <h3>EXISTE UNA AMPLIA GAMA DE BENEFICIOS DE MEMBRESÍA, ENTRE ELLOS:</h3>
+      <h3>Existe una amplia gama de beneficions de memebresía, entre ellos:</h3>
       <ul>
-        <li>{text.a}</li>
-        <li>{text.b}</li>
-        <li>{text.c}</li>
-        <li>{text.d}</li>
-        <li>{text.e}</li>
-        <li>{text.f}</li>
-        <li>{text.g}</li>
+        <li>
+          <p>{text.a}</p>
+        </li>
+        <li>
+          <p>{text.b}</p>
+        </li>
+        <li>
+          <p>{text.c}</p>
+        </li>
+        <li>
+          <p>{text.d}</p>
+        </li>
+        <li>
+          <p>{text.e}</p>
+        </li>
+        <li>
+          <p>{text.f}</p>
+        </li>
+        <li>
+          <p>{text.g}</p>
+        </li>
       </ul>
       <p>{text.outro}</p>
     </div>
