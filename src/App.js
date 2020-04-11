@@ -14,6 +14,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
+        <Redirect exact from="/" to="main" />
         <Route path="/main">
           <MainLayout />
         </Route>
