@@ -6,7 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import firebase from "../../utils/FireBase";
 import "firebase/auth";
 //Components
-import { message } from "antd";
+import { message, Layout } from "antd";
 import SideMenu from "../../components/SideMenu";
 import TopicsManager from "../../components/TopicsManager";
 import LinksManager from "../../components/LinksManager";
@@ -15,7 +15,7 @@ import LoginForm from "../../forms/LoginForm";
 
 export default function Admin() {
   //Current Logged User
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   //Login
@@ -62,21 +62,28 @@ export default function Admin() {
 //This functions renders the Admin menu once the User has logged in succesfully
 function AdminMenu(props) {
   const { logOut } = props;
+  const { Sider, Header, Content } = Layout;
+
   return (
-    <>
-      <div className="menu">
-        <SideMenu logOut={logOut} />
-      </div>
-      <div className="content">
-        <Switch>
-          <Route path="/admin/manage-topics">
-            <TopicsManager />
-          </Route>
-          <Route path="/admin/manage-links">
-            <LinksManager />
-          </Route>
-        </Switch>
-      </div>
-    </>
+    <Layout>
+      <Header className="header">
+        <h1>Menu de Administrador</h1>
+      </Header>
+      <Layout className="content">
+        <Sider width={200}>
+          <SideMenu logOut={logOut} />
+        </Sider>
+        <Content>
+          <Switch>
+            <Route path="/admin/manage-topics">
+              <TopicsManager />
+            </Route>
+            <Route path="/admin/manage-links">
+              <LinksManager />
+            </Route>
+          </Switch>
+        </Content>
+      </Layout>
+    </Layout>
   );
 }
