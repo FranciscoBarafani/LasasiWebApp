@@ -13,6 +13,7 @@
 
 #files
 /src/utils/FireBase.js
+/src/utils/TinyMce.js
 
 # misc
 .DS_Store

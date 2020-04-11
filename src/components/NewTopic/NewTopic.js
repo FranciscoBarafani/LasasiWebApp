@@ -1,11 +1,16 @@
+//Essentials
 import React from "react";
 import "./NewTopic.scss";
+//Config
+import { TINY_API_KEY } from "../../utils/TinyMce";
+//Components
 import { Editor } from "@tinymce/tinymce-react";
 
 export default function NewTopic() {
   return (
     <div className="new-topic">
       <Editor
+        apiKey={TINY_API_KEY}
         initialValue="<p>Nuevo Tópico</p>"
         init={{
           height: 500,
