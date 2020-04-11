@@ -22,27 +22,27 @@ export default function TopMenu() {
       <Menu mode="horizontal">
         <Menu.Item>
           <HomeOutlined />
-          <Link to="/">Home</Link>
+          <Link to="/main">Home</Link>
         </Menu.Item>
         <Menu.Item>
           <FileTextOutlined />
-          <Link to="/topics">Topicos</Link>
+          <Link to="/main/topics">Topicos</Link>
         </Menu.Item>
         <Menu.Item>
           <CalendarOutlined />
-          <Link to="/events">Eventos</Link>
+          <Link to="/main/events">Eventos</Link>
         </Menu.Item>
         <Menu.Item>
           <LinkOutlined />
-          <Link to="/links">Enlaces</Link>
+          <Link to="/main/links">Enlaces</Link>
         </Menu.Item>
         <Menu.Item>
           <InfoCircleOutlined />
-          <Link to="/about">Sobre Nosotros</Link>
+          <Link to="/main/about">Sobre Nosotros</Link>
         </Menu.Item>
         <Menu.Item>
           <MailOutlined />
-          <Link to="/contact">Contacto</Link>
+          <Link to="/main/contact">Contacto</Link>
         </Menu.Item>
       </Menu>
     </div>
