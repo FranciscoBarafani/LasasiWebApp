@@ -1,3 +1,4 @@
+//Essentials
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -8,6 +9,7 @@ import {
 
 //Main Pages
 import MainLayout from "./layouts/MainLayout";
+//Admin Page
 import Admin from "./pages/admin";
 
 export default function App() {

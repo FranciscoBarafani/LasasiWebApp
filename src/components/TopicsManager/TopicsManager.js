@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "./TopicsManager.scss";
 //Components
-import useFetch from "../../hooks/useFetch";
 import Loading from "../../components/Loading";
 import Actions from "../../components/Actions";
 import Topics from "../../components/Topics";
@@ -12,7 +11,7 @@ import EditTopic from "../../components/EditTopic";
 export default function TopicsManager() {
   const [activeShow, setActiveShow] = useState("new");
 
-  //This functions reders whether the Table with all Topics or the topic editor
+  //This functions renders whether the Table with all Topics or the topic editor
   const topicHandler = (render) => {
     switch (render) {
       case "new":
