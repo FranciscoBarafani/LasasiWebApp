@@ -9,6 +9,8 @@ import moment from "moment";
 //Firebase
 import firebase from "../../utils/FireBase";
 import "firebase/firestore";
+//Icons
+import { ArrowLeftOutlined } from "@ant-design/icons";
 
 import "./NewTopic.scss";
 
@@ -16,7 +18,8 @@ const db = firebase.firestore(firebase);
 
 //TODO: Clean form and text editor after submit
 
-export default function NewTopic() {
+export default function NewTopic(props) {
+  const { setActiveShow } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [editorData, setEditorData] = useState("");
 
@@ -43,6 +46,7 @@ export default function NewTopic() {
       .then(() => {
         message.success("Tópico publicado satisfactoriamente.");
         setIsLoading(false);
+        setActiveShow("topics");
       })
       .catch(() => {
         message.error("Error al publicar tópico, intentelo mas tarde.");
@@ -57,6 +61,12 @@ export default function NewTopic() {
 
   return (
     <div className="new-topic">
+      <Button
+        onClick={() => setActiveShow("topics")}
+        icon={<ArrowLeftOutlined />}
+      >
+        Volver
+      </Button>
       <Form onFinish={onFormFinish}>
         <Form.Item
           label="Título del tópico"
@@ -81,7 +91,6 @@ export default function NewTopic() {
           <Editor
             on
             apiKey={TINY_API_KEY}
-            initialValue="<p>Nuevo Tópico</p>"
             getContent={(e) => console.log(e)}
             init={{
               height: 500,

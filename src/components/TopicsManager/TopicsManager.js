@@ -2,23 +2,34 @@
 import React, { useState, useEffect } from "react";
 import "./TopicsManager.scss";
 //Components
-import { Button, Icon } from "antd";
+import { Button } from "antd";
 import Topics from "../../components/Topics";
 import NewTopic from "../../components/NewTopic";
 import EditTopic from "../../components/EditTopic";
 
 export default function TopicsManager() {
   const [activeShow, setActiveShow] = useState("topics");
+  const [selectedTopic, setSelectedTopic] = useState(null);
 
   //This functions renders whether the Table with all Topics or the topic editor
   const topicHandler = (render) => {
     switch (render) {
       case "new":
-        return <NewTopic />;
+        return <NewTopic setActiveShow={setActiveShow} />;
       case "edit":
-        return <EditTopic />;
+        return (
+          <EditTopic
+            topicToEdit={selectedTopic}
+            setActiveShow={setActiveShow}
+          />
+        );
       case "topics":
-        return <Topics />;
+        return (
+          <Topics
+            setActiveShow={setActiveShow}
+            setSelectedTopic={setSelectedTopic}
+          />
+        );
       default:
         break;
     }
@@ -30,10 +41,6 @@ export default function TopicsManager() {
         <Button type="primary" onClick={() => setActiveShow("new")}>
           Nuevo Tópico
         </Button>
-        <Button type="primary" onClick={() => setActiveShow("edit")}>
-          Editar Tópico
-        </Button>
-        <Button type="danger">Eliminar Tópico</Button>
       </div>
       <div className="topics-manager__show">{topicHandler(activeShow)}</div>
     </div>
