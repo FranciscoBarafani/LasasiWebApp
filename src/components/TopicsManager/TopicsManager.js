@@ -1,15 +1,14 @@
 //Essentials
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TopicsManager.scss";
 //Components
-import Loading from "../../components/Loading";
-import Actions from "../../components/Actions";
+import { Button, Icon } from "antd";
 import Topics from "../../components/Topics";
 import NewTopic from "../../components/NewTopic";
 import EditTopic from "../../components/EditTopic";
 
 export default function TopicsManager() {
-  const [activeShow, setActiveShow] = useState("new");
+  const [activeShow, setActiveShow] = useState("topics");
 
   //This functions renders whether the Table with all Topics or the topic editor
   const topicHandler = (render) => {
@@ -25,5 +24,18 @@ export default function TopicsManager() {
     }
   };
 
-  return <div className="topics-manager">{topicHandler(activeShow)}</div>;
+  return (
+    <div className="topics-manager">
+      <div className="topics-manager__menu">
+        <Button type="primary" onClick={() => setActiveShow("new")}>
+          Nuevo Tópico
+        </Button>
+        <Button type="primary" onClick={() => setActiveShow("edit")}>
+          Editar Tópico
+        </Button>
+        <Button type="danger">Eliminar Tópico</Button>
+      </div>
+      <div className="topics-manager__show">{topicHandler(activeShow)}</div>
+    </div>
+  );
 }

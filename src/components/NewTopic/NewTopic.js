@@ -57,7 +57,7 @@ export default function NewTopic() {
 
   return (
     <div className="new-topic">
-      <Form onFinish={onFormFinish} onChange={(e) => console.log(e.fields)}>
+      <Form onFinish={onFormFinish}>
         <Form.Item
           label="Título del tópico"
           name="title"
