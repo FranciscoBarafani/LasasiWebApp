@@ -9,6 +9,7 @@
     "@tinymce/tinymce-react": "^3.5.0",
     "antd": "^4.0.1",
     "firebase": "^7.13.2",
+    "lodash": "^4.17.15",
     "moment": "^2.25.3",
     "node-sass": "^4.13.1",
     "nodemailer": "^6.4.6",
