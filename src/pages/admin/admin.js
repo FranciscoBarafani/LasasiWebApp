@@ -8,7 +8,7 @@ import "firebase/auth";
 //Components
 import { message, Layout } from "antd";
 import SideMenu from "../../components/SideMenu";
-import TopicsManager from "../../components/TopicsManager";
+import TopicsManager from "../../components/Topics/TopicsManager";
 import LinksManager from "../../components/LinksManager";
 //Login Form
 import LoginForm from "../../forms/LoginForm";

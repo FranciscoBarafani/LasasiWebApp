@@ -22,6 +22,7 @@ export default function LoginForm(props) {
           <Form.Item
             label="Correo Electrónico"
             name="email"
+            maxLength={30}
             rules={[
               { required: true, message: "Por favor introduce tu correo..." },
             ]}
@@ -31,6 +32,7 @@ export default function LoginForm(props) {
           <Form.Item
             label="Contraseña"
             name="password"
+            maxLength={16}
             rules={[
               {
                 required: true,

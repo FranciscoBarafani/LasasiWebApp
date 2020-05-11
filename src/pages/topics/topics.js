@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./topics.scss";
 //Components
-import Topic from "../../components/Topic";
+import Topic from "../../components/Topics/Topic";
 import Loading from "../../components/Loading";
 import MyPagination from "../../components/Pagination";
 //Fetching Hook & Fetch Address

@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
 //Config
-import { TINY_API_KEY } from "../../utils/TinyMce";
+import { TINY_API_KEY } from "../../../utils/TinyMce";
 //Components
 import { Editor } from "@tinymce/tinymce-react";
 import moment from "moment";
 //Firebase
-import firebase from "../../utils/FireBase";
+import firebase from "../../../utils/FireBase";
 import "firebase/firestore";
 //Icons
 import { ArrowLeftOutlined } from "@ant-design/icons";
@@ -73,7 +73,7 @@ export default function NewTopic(props) {
           name="title"
           rules={[{ required: true, message: "Por favor ingresa el título." }]}
         >
-          <Input />
+          <Input maxLength={50} />
         </Form.Item>
         <Form.Item
           label="Nombre del Autor"
@@ -85,7 +85,7 @@ export default function NewTopic(props) {
             },
           ]}
         >
-          <Input />
+          <Input maxLength={50} />
         </Form.Item>
         <Form.Item>
           <Editor

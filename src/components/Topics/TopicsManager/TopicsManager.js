@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import "./TopicsManager.scss";
 //Components
 import { Button } from "antd";
-import Topics from "../../components/Topics";
-import NewTopic from "../../components/NewTopic";
-import EditTopic from "../../components/EditTopic";
+import Topics from "..";
+import NewTopic from "../NewTopic";
+import EditTopic from "../EditTopic";
 
 export default function TopicsManager() {
   const [activeShow, setActiveShow] = useState("topics");
