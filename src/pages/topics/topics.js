@@ -1,41 +1,72 @@
 //Essentials
 import React, { useEffect, useState } from "react";
-import "./topics.scss";
 //Components
 import Topic from "../../components/Topics/Topic";
 import Loading from "../../components/Loading";
 import MyPagination from "../../components/Pagination";
+import { map } from "lodash";
+import { message } from "antd";
 //Fetching Hook & Fetch Address
-import useFetch from "../../hooks/useFetch";
-import { GET_TOPICS } from "../../utils/constants";
+//import useFetch from "../../hooks/useFetch";
+//import { GET_TOPICS } from "../../utils/constants";
+//Firebase
+import firebase from "../../utils/FireBase";
+import "firebase/firestore";
+
+import "./topics.scss";
+
+const db = firebase.firestore(firebase);
 
 export default function Topics() {
   //UseFetchs uses the URL to get the JSON and save it into topics.
-  const topics = useFetch(GET_TOPICS, null);
-  const { result, loading } = topics;
+  //const topics = useFetch(GET_TOPICS, null);
+  //const { result, loading } = topics;
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentList, setCurrentList] = useState([]);
+  const [topics, setTopics] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  //This useEffect gets all topics
+  useEffect(() => {
+    setIsLoading(true);
+    db.collection("topics")
+      .get()
+      .then((response) => {
+        const topics = [];
+        map(response.docs, (topic) => {
+          const data = topic.data();
+          data.key = topic.id;
+          topics.push(data);
+        });
+        setTopics(topics);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        message.error("Error al obtener tópicos, intentelo mas tarde.");
+        setIsLoading(false);
+      });
+  }, []);
 
   //useEffect activates when the Fetch result has loaded
   useEffect(() => {
-    if (!loading || result) {
-      setTotalItems(result.length);
+    if (!isLoading || topics) {
+      setTotalItems(topics.length);
       //Assigning starting page as 1
-      setCurrentList(result.slice(0, 2));
+      setCurrentList(topics.slice(0, 2));
     }
-  }, [loading, result]);
+  }, [topics, isLoading]);
 
   //This function is called everytime the page is changed,
   //Slicing the result array in an smaller portion
   const onChangePage = (page, pageSize) => {
     setCurrentPage(page);
-    setCurrentList(result.slice((page - 1) * pageSize, page * pageSize));
+    setCurrentList(topics.slice((page - 1) * pageSize, page * pageSize));
   };
 
   return (
     <div className="topics">
-      {loading || !currentList ? (
+      {isLoading || !currentList ? (
         <Loading />
       ) : (
         currentList.map((topic, index) => <Topic key={index} topic={topic} />)

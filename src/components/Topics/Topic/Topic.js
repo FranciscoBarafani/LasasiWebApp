@@ -1,21 +1,26 @@
 //Essentials
 import React from "react";
 import "./Topic.scss";
+//Components
+import Interweave from "interweave";
 
 //This component renders a box with a Topic
 
 export default function Topic(props) {
   const {
-    topic: { title, image, alt, body, author }
+    topic: { title, time, body, author },
   } = props;
+
   return (
     <div className="topic">
       <h1>{title}</h1>
-      <div>
-        <img src={image} alt={alt} />
+      <div className="topic-body">
+        <Interweave content={body} />
       </div>
-      <h3>{body}</h3>
-      <h4>{author}</h4>
+      <div className="topic-footer">
+        <h5>{author}</h5>
+        <h5>{time}</h5>
+      </div>
     </div>
   );
 }
