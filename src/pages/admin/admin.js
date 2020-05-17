@@ -9,7 +9,7 @@ import "firebase/auth";
 import { message, Layout } from "antd";
 import SideMenu from "../../components/SideMenu";
 import TopicsManager from "../../components/Topics/TopicsManager";
-import LinksManager from "../../components/LinksManager";
+import LinksManager from "../../components/Links/LinksManager";
 //Login Form
 import LoginForm from "../../forms/LoginForm";
 

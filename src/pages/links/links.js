@@ -2,7 +2,7 @@
 import React from "react";
 import "./links.scss";
 //Components
-import MyLink from "../../components/Link";
+import MyLink from "../../components/Links/Link";
 
 export default function Links() {
   return (
