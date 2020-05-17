@@ -12,8 +12,10 @@ import "./Links.scss";
 
 const db = firebase.firestore(firebase);
 
-export default function Links() {
+export default function Links(props) {
+  const { setSelectedLink, setActiveShow } = props;
   const [links, setLinks] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   //This function gets all links
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function Links() {
         map(response.docs, (link) => {
           const data = link.data();
           data.id = link.id;
+          data.key = link.id;
           linksArray.push(data);
         });
         setLinks(linksArray);
@@ -31,29 +34,53 @@ export default function Links() {
       .catch(() => {
         message.error("Error al obtener enlaces, intentelo nuevamente");
       });
-  }, []);
+  }, [refresh]);
+
+  //This functions opens the Link editor once clicked
+  const onEditButtonClick = (link) => {
+    setSelectedLink(link);
+    setActiveShow("edit");
+  };
+
+  //This function deletes the selected link
+  const deleteLink = (id) => {
+    if (id) {
+      db.collection("links")
+        .doc(id)
+        .delete()
+        .then(() => {
+          message.info("Enlace eliminado correctamente");
+          setRefresh(!refresh);
+        })
+        .catch(() => {
+          message.info("Error al eliminar enlace, intentelo nuevamente.");
+        });
+    } else {
+      message.error("Error al obtener ID del enlace seleccionado.");
+    }
+  };
 
   return (
     <div className="links">
       <Table dataSource={links} className="links-table">
-        <Table.Column title="Nombre" dataIndex="name" key="id" />
-        <Table.Column title="Enlace" dataIndex="link" key="link" />
+        <Table.Column title="Nombre" dataIndex="name" key="key" />
+        <Table.Column title="Enlace" dataIndex="link" />
         <Table.Column
           title="Acciones"
           key="actions"
           render={(record) => (
-            <div className="topics-table__buttons">
+            <div className="links-table__buttons">
               <Button
                 type="secondary"
                 shape="circle"
                 icon={<EditOutlined />}
-                onClick={() => console.log(record)}
+                onClick={() => onEditButtonClick(record)}
               />
               <Popconfirm
                 title="Estas seguro que deseas eliminar?"
                 okText="Eliminar"
                 cancelText="No"
-                onConfirm={() => console.log(record.key)}
+                onConfirm={() => deleteLink(record.key)}
               >
                 <Button
                   type="danger"

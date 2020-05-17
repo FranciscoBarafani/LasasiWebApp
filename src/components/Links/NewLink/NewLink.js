@@ -11,7 +11,8 @@ import "./NewLink.scss";
 
 const db = firebase.firestore(firebase);
 
-export default function NewLink() {
+export default function NewLink(props) {
+  const { setActiveShow } = props;
   const [isLoading, setIsLoading] = useState(false);
 
   //This functio uploads the new link
@@ -23,6 +24,7 @@ export default function NewLink() {
       .then(() => {
         setIsLoading(false);
         message.success("Enlace creado correctamente/");
+        setActiveShow("links");
       })
       .catch(() => {
         setIsLoading(false);
@@ -33,7 +35,12 @@ export default function NewLink() {
   return (
     <div className="new-link">
       <Form onFinish={onFinish}>
-        <Button icon={<ArrowLeftOutlined />}>Volver</Button>
+        <Button
+          icon={<ArrowLeftOutlined />}
+          onClick={() => setActiveShow("links")}
+        >
+          Volver
+        </Button>
         <Form.Item
           label="Nombre del enlace"
           name="name"

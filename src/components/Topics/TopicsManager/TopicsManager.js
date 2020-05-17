@@ -1,5 +1,5 @@
 //Essentials
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./TopicsManager.scss";
 //Components
 import { Button } from "antd";

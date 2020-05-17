@@ -1,2 +1,14 @@
 .links-manager {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  &__menu {
+    margin-bottom: 20px;
+    button {
+      margin-left: 20px;
+    }
+  }
 }

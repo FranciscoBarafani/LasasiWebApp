@@ -1,2 +1,9 @@
 .links {
+  &-table {
+    &__buttons {
+      button {
+        margin-left: 5px;
+      }
+    }
+  }
 }

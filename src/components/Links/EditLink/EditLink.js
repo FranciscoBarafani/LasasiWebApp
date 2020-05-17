@@ -1,7 +1,7 @@
 //Essentials
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //Components
-import { Form, Input, Button, message, Icon } from "antd";
+import { Form, Input, Button, message } from "antd";
 //Icons
 import { ArrowLeftOutlined } from "@ant-design/icons";
 //Firebase
@@ -12,7 +12,7 @@ import "./EditLink.scss";
 const db = firebase.firestore(firebase);
 
 export default function EditLink(props) {
-  const { link } = props;
+  const { link, setActiveShow } = props;
   const [isLoading, setIsLoading] = useState(false);
 
   //This function updates the selected Link
@@ -24,6 +24,7 @@ export default function EditLink(props) {
       .then(() => {
         setIsLoading(false);
         message.success("Enlace modificado satisfactoriamente");
+        setActiveShow("links");
       })
       .catch(() => {
         setIsLoading(false);
@@ -40,7 +41,12 @@ export default function EditLink(props) {
           link: link.link,
         }}
       >
-        <Button icon={<ArrowLeftOutlined />}>Volver</Button>
+        <Button
+          icon={<ArrowLeftOutlined />}
+          onClick={() => setActiveShow("links")}
+        >
+          Volver
+        </Button>
         <Form.Item
           label="Nombre del enlace"
           name="name"
