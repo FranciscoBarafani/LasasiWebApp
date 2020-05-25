@@ -8,7 +8,7 @@ export default function MyFooter() {
   return (
     <div className="footer">
       <h1>On Progress</h1>
-      <h3>BaraBros Copyright</h3>
+      <h3>Francisco Barafani Copyright</h3>
     </div>
   );
 }
