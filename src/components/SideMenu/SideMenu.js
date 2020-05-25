@@ -1,8 +1,7 @@
 //Essentials
 import React from "react";
-import "./SideMenu.scss";
 //Components
-import { Menu } from "antd";
+import { Menu, Popconfirm } from "antd";
 import { Link } from "react-router-dom";
 //Assets
 import {
@@ -11,6 +10,8 @@ import {
   SettingOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
+
+import "./SideMenu.scss";
 
 //This component renders the side menu
 export default function SideMenu(props) {
@@ -31,7 +32,14 @@ export default function SideMenu(props) {
       </Menu.Item>
       <Menu.Item key="4">
         <LogoutOutlined />
-        <span onClick={logOut}>Cerrar Sesion</span>
+        <Popconfirm
+          title="Cerrar sesión?"
+          okText="Si"
+          cancelText="No"
+          onConfirm={logOut}
+        >
+          <span>Cerrar Sesion</span>
+        </Popconfirm>
       </Menu.Item>
     </Menu>
   );
