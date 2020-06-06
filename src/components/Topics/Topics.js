@@ -5,6 +5,7 @@ import "firebase/firestore";
 //Components
 import { Table, message, Button, Popconfirm } from "antd";
 import { map } from "lodash";
+import Loading from "../Loading";
 //Icons
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
@@ -16,6 +17,7 @@ export default function Topics(props) {
   const { setActiveShow, setSelectedTopic } = props;
   const [refresh, setRefresh] = useState(false);
   const [topics, setTopics] = useState([]);
+  const [isLoading, setisLoading] = useState(true);
 
   //Get Topics
   useEffect(() => {
@@ -29,6 +31,7 @@ export default function Topics(props) {
           topics.push(data);
         });
         setTopics(topics);
+        setisLoading(false);
       })
       .catch(() => {
         message.error("Error al obtener tópicos, intente mas tarde.");
@@ -57,37 +60,41 @@ export default function Topics(props) {
 
   return (
     <div className="topics">
-      <Table dataSource={topics} className="topics-table">
-        <Table.Column title="Titulo" dataIndex="title" key="id" />
-        <Table.Column title="Autor" dataIndex="author" key="author" />
-        <Table.Column title="Fecha de Creación" dataIndex="time" key="time" />
-        <Table.Column
-          title="Acciones"
-          key="actions"
-          render={(record) => (
-            <div className="topics-table__buttons">
-              <Button
-                type="secondary"
-                shape="circle"
-                icon={<EditOutlined />}
-                onClick={() => onEditButtonClick(record)}
-              />
-              <Popconfirm
-                title="Estas seguro que deseas eliminar?"
-                okText="Eliminar"
-                cancelText="No"
-                onConfirm={() => deleteTopic(record.key)}
-              >
+      {!isLoading ? (
+        <Table dataSource={topics} className="topics-table">
+          <Table.Column title="Titulo" dataIndex="title" key="id" />
+          <Table.Column title="Autor" dataIndex="author" key="author" />
+          <Table.Column title="Fecha de Creación" dataIndex="time" key="time" />
+          <Table.Column
+            title="Acciones"
+            key="actions"
+            render={(record) => (
+              <div className="topics-table__buttons">
                 <Button
-                  type="danger"
+                  type="secondary"
                   shape="circle"
-                  icon={<DeleteOutlined />}
+                  icon={<EditOutlined />}
+                  onClick={() => onEditButtonClick(record)}
                 />
-              </Popconfirm>
-            </div>
-          )}
-        />
-      </Table>
+                <Popconfirm
+                  title="Estas seguro que deseas eliminar?"
+                  okText="Eliminar"
+                  cancelText="No"
+                  onConfirm={() => deleteTopic(record.key)}
+                >
+                  <Button
+                    type="danger"
+                    shape="circle"
+                    icon={<DeleteOutlined />}
+                  />
+                </Popconfirm>
+              </div>
+            )}
+          />
+        </Table>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

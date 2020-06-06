@@ -11,10 +11,11 @@ export default function MyCarousel() {
     <div className="carousel">
       <Carousel>
         <div>
-          <img src={banner} alt="Banner" />
-        </div>
-        <div>
-          <h2>Imagen 2</h2>
+          <img
+            src={banner}
+            alt="Banner"
+            style={{ width: "100%", padding: "0 20%" }}
+          />
         </div>
       </Carousel>
     </div>

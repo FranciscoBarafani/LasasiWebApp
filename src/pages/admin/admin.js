@@ -40,7 +40,7 @@ export default function Admin() {
       .signOut()
       .then(() => {
         message.info("Has cerrado sesión.");
-        setUser(null);
+        setUser(false);
       })
       .catch(() =>
         message.error("Ocurrio un error al cerrar sesion, intente nuevamente")

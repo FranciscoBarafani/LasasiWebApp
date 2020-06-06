@@ -18,6 +18,7 @@ export default function NewLink(props) {
   //This functio uploads the new link
   const onFinish = (formData) => {
     setIsLoading(true);
+    formData.link = `https://${formData.link}`;
     db.collection("links")
       .doc()
       .set(formData)

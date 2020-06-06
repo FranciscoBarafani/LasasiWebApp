@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 //Components
 import { Table, Button, Popconfirm, message } from "antd";
 import { map } from "lodash";
+import Loading from "../Loading";
 //Firebase
 import firebase from "../../utils/FireBase";
 //Icons
@@ -16,6 +17,7 @@ export default function Links(props) {
   const { setSelectedLink, setActiveShow } = props;
   const [links, setLinks] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   //This function gets all links
   useEffect(() => {
@@ -30,6 +32,7 @@ export default function Links(props) {
           linksArray.push(data);
         });
         setLinks(linksArray);
+        setIsLoading(false);
       })
       .catch(() => {
         message.error("Error al obtener enlaces, intentelo nuevamente");
@@ -62,36 +65,40 @@ export default function Links(props) {
 
   return (
     <div className="links">
-      <Table dataSource={links} className="links-table">
-        <Table.Column title="Nombre" dataIndex="name" key="key" />
-        <Table.Column title="Enlace" dataIndex="link" />
-        <Table.Column
-          title="Acciones"
-          key="actions"
-          render={(record) => (
-            <div className="links-table__buttons">
-              <Button
-                type="secondary"
-                shape="circle"
-                icon={<EditOutlined />}
-                onClick={() => onEditButtonClick(record)}
-              />
-              <Popconfirm
-                title="Estas seguro que deseas eliminar?"
-                okText="Eliminar"
-                cancelText="No"
-                onConfirm={() => deleteLink(record.key)}
-              >
+      {!isLoading ? (
+        <Table dataSource={links} className="links-table">
+          <Table.Column title="Nombre" dataIndex="name" key="key" />
+          <Table.Column title="Enlace" dataIndex="link" />
+          <Table.Column
+            title="Acciones"
+            key="actions"
+            render={(record) => (
+              <div className="links-table__buttons">
                 <Button
-                  type="danger"
+                  type="secondary"
                   shape="circle"
-                  icon={<DeleteOutlined />}
+                  icon={<EditOutlined />}
+                  onClick={() => onEditButtonClick(record)}
                 />
-              </Popconfirm>
-            </div>
-          )}
-        />
-      </Table>
+                <Popconfirm
+                  title="Estas seguro que deseas eliminar?"
+                  okText="Eliminar"
+                  cancelText="No"
+                  onConfirm={() => deleteLink(record.key)}
+                >
+                  <Button
+                    type="danger"
+                    shape="circle"
+                    icon={<DeleteOutlined />}
+                  />
+                </Popconfirm>
+              </div>
+            )}
+          />
+        </Table>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }
