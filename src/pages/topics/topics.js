@@ -6,9 +6,6 @@ import Loading from "../../components/Loading";
 import MyPagination from "../../components/Pagination";
 import { map } from "lodash";
 import { message } from "antd";
-//Fetching Hook & Fetch Address
-//import useFetch from "../../hooks/useFetch";
-//import { GET_TOPICS } from "../../utils/constants";
 //Firebase
 import firebase from "../../utils/FireBase";
 import "firebase/firestore";
@@ -18,9 +15,6 @@ import "./topics.scss";
 const db = firebase.firestore(firebase);
 
 export default function Topics() {
-  //UseFetchs uses the URL to get the JSON and save it into topics.
-  //const topics = useFetch(GET_TOPICS, null);
-  //const { result, loading } = topics;
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentList, setCurrentList] = useState([]);

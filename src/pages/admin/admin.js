@@ -15,7 +15,7 @@ import LoginForm from "../../forms/LoginForm";
 
 export default function Admin() {
   //Current Logged User
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   //Login

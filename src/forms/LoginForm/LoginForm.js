@@ -18,9 +18,13 @@ export default function LoginForm(props) {
   return (
     <div className="login">
       <div className="login__form">
-        <Form onFinish={onFinish}>
+        <Form
+          onFinish={onFinish}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+        >
           <Form.Item
-            label="Correo Electrónico"
+            label="E-Mail"
             name="email"
             maxLength={30}
             rules={[
@@ -42,9 +46,11 @@ export default function LoginForm(props) {
           >
             <Input.Password />
           </Form.Item>
-          <Button type="primary" htmlType="submit" loading={isLoading}>
-            Iniciar Sesión
-          </Button>
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Button type="primary" htmlType="submit" loading={isLoading}>
+              Iniciar Sesión
+            </Button>
+          </Form.Item>
         </Form>
       </div>
     </div>
