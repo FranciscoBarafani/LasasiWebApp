@@ -11,7 +11,9 @@ export default function Home() {
   return (
     <div className="home">
       <ImageBox alt="Imagen" image={boeingImage} />
-      <HomeText />
+      <div className="presentation">
+        <HomeText />
+      </div>
     </div>
   );
 }

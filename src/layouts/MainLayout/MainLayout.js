@@ -7,12 +7,23 @@ import { BackTop, Avatar } from "antd";
 import { WhatsAppOutlined } from "@ant-design/icons";
 //Routes
 import MainRoutes from "../../routes/MainRoutes";
+//Background
+import backgroundImage from "../../assets/images/background.svg";
 
 import "./MainLayout.scss";
 
 export default function MainLayout() {
   return (
-    <div className="main-layout">
+    <div
+      className="main-layout"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
       <MyCarousel />
       <TopMenu />
       <MainRoutes />
