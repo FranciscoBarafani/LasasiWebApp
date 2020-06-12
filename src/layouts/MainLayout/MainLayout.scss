@@ -1,0 +1,12 @@
+.main-layout {
+  .ant-avatar {
+    position: fixed;
+    right: 30px;
+    bottom: 45px;
+    background-color: #25d366;
+
+    &:hover {
+      background-color: #28ec70;
+    }
+  }
+}

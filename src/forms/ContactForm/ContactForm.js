@@ -1,24 +1,22 @@
 //Essentials
 import React from "react";
+//Components
+import { MailOutlined } from "@ant-design/icons";
+
 import "./ContactForm.scss";
-import WhatssapIcon from "../../assets/images/svg/WhatsApp-icon.png";
 
 //TODO: Implement the email sending function
 export default function ContactForm() {
   return (
     <div className="contact-us">
       <div className="contact-us__layout">
-        <img
-          className="contact-us__layout-logo"
-          src={WhatssapIcon}
-          alt="Logo de Whatsapp"
-        />
+        <MailOutlined />
         <a
-          href="https://wa.me/5493517862670"
+          href="mailto:dbarafani@yahoo.com.ar"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>Contactános por Whatsapp</h2>
+          <h2>Envíanos un Mail</h2>
         </a>
       </div>
     </div>
