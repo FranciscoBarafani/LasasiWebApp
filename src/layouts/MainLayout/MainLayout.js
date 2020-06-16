@@ -2,7 +2,7 @@ import React from "react";
 //Components
 import TopMenu from "../../components/TopMenu";
 import MyFooter from "../../components/Footer";
-import MyCarousel from "../../components/Carousel";
+import MyBanner from "../../components/Banner";
 import { BackTop, Avatar } from "antd";
 import { WhatsAppOutlined } from "@ant-design/icons";
 //Routes
@@ -24,7 +24,7 @@ export default function MainLayout() {
         backgroundSize: "cover",
       }}
     >
-      <MyCarousel />
+      <MyBanner />
       <TopMenu />
       <MainRoutes />
       <a

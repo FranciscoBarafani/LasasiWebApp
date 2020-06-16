@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 //Components
 import MyLink from "../../components/Links/Link";
 import Loading from "../../components/Loading";
-import { message } from "antd";
+import { message, Col, Row } from "antd";
 import { map } from "lodash";
 //Firebase
 import firebase from "../../utils/FireBase";
@@ -36,14 +36,20 @@ export default function Links() {
 
   return (
     <div className="links">
-      <h1>Enlaces</h1>
-      {links ? (
-        map(links, (link) => (
-          <MyLink name={link.name} link={link.link} key={link.key} />
-        ))
-      ) : (
-        <Loading />
-      )}
+      <Row>
+        <Col offset={7} span={10}>
+          <div className="links__label">
+            <h1>Enlaces</h1>
+          </div>
+          {links ? (
+            map(links, (link) => (
+              <MyLink name={link.name} link={link.link} key={link.key} />
+            ))
+          ) : (
+            <Loading />
+          )}
+        </Col>
+      </Row>
     </div>
   );
 }

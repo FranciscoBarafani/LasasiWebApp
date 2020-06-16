@@ -1,7 +1,5 @@
 //Essentials
 import React from "react";
-//Components
-import { MailOutlined } from "@ant-design/icons";
 
 import "./ContactForm.scss";
 
@@ -10,9 +8,8 @@ export default function ContactForm() {
   return (
     <div className="contact-us">
       <div className="contact-us__layout">
-        <MailOutlined />
         <a
-          href="mailto:dbarafani@yahoo.com.ar"
+          href="mailto:info@lasasi.org"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -5,7 +5,7 @@ import Topic from "../../components/Topics/Topic";
 import Loading from "../../components/Loading";
 import MyPagination from "../../components/Pagination";
 import { map } from "lodash";
-import { message } from "antd";
+import { message, Col, Row } from "antd";
 //Firebase
 import firebase from "../../utils/FireBase";
 import "firebase/firestore";
@@ -60,16 +60,22 @@ export default function Topics() {
 
   return (
     <div className="topics">
-      {isLoading || !currentList ? (
-        <Loading />
-      ) : (
-        currentList.map((topic, index) => <Topic key={index} topic={topic} />)
-      )}
-      <MyPagination
-        totalItems={totalItems}
-        currentPage={currentPage}
-        onChangePage={onChangePage}
-      />
+      <Row>
+        <Col span={16} offset={4}>
+          {isLoading || !currentList ? (
+            <Loading />
+          ) : (
+            currentList.map((topic, index) => (
+              <Topic key={index} topic={topic} />
+            ))
+          )}
+          <MyPagination
+            totalItems={totalItems}
+            currentPage={currentPage}
+            onChangePage={onChangePage}
+          />
+        </Col>
+      </Row>
     </div>
   );
 }

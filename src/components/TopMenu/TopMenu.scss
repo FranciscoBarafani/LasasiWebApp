@@ -1,6 +1,7 @@
 .top-menu {
   position: -webkit-sticky;
   position: sticky;
+  z-index: 3;
   top: 0;
   .ant-menu {
     padding: 0px 20%;

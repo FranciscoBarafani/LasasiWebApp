@@ -9,8 +9,8 @@ import { Spin } from "antd";
 export default function Loading() {
   return (
     <div className="loading">
-      <h1>Cargando</h1>
       <Spin />
+      <h1>Cargando</h1>
     </div>
   );
 }
