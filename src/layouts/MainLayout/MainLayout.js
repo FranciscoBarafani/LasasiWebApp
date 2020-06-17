@@ -57,7 +57,7 @@ export default function MainLayout() {
           <Parallax
             animation={[
               { y: 0, opacity: 1, playScale: [0, 0.2] },
-              { blur: "10px", playScale: [0, 0.5] },
+              { blur: "0px", playScale: [0, 0.5] },
             ]}
             style={{
               transform: "translateY(50px)",

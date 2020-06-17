@@ -1,16 +1,10 @@
 //Essentials
 import React from "react";
 //Assets
-import banner from "../../assets/images/LasasiBanner.jpg";
+import banner from "../../assets/images/LasasiBanner.svg";
 
 import "./Banner.scss";
 
 export default function MyBanner() {
-  return (
-    <div className="banner">
-      <div>
-        <img src={banner} alt="Banner" />
-      </div>
-    </div>
-  );
+  return <img src={banner} alt="Banner" height={160} width={1000} />;
 }
