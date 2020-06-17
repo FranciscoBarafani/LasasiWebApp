@@ -3,6 +3,7 @@ import React from "react";
 import "./events.scss";
 //Components
 import MyCalendar from "../../components/Calendar";
+
 //Assets
 import { GOOGLE_CALENDAR } from "../../utils/constants";
 

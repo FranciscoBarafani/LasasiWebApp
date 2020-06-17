@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="home">
       <Row>
-        <Col span={16} offset={4}>
+        <Col lg={{ span: 16, offset: 4 }}>
           <div className="presentation">
             <HomeText />
           </div>

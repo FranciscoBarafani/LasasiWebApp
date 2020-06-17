@@ -3,8 +3,13 @@
   position: sticky;
   z-index: 3;
   top: 0;
+  width: 100%;
+  border-top: 4px solid #3279bd;
+  background-color: white;
   .ant-menu {
-    padding: 0px 20%;
-    border-top: 4px solid #3279bd;
+    margin-left: 25vw;
+    &-item {
+      display: inline-block;
+    }
   }
 }

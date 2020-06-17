@@ -6,16 +6,12 @@ import "./ContactForm.scss";
 //TODO: Implement the email sending function
 export default function ContactForm() {
   return (
-    <div className="contact-us">
-      <div className="contact-us__layout">
-        <a
-          href="mailto:info@lasasi.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+    <a href="mailto:info@lasasi.org" target="_blank" rel="noopener noreferrer">
+      <div className="contact-us">
+        <div className="contact-us__layout">
           <h2>Envíanos un Mail</h2>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
