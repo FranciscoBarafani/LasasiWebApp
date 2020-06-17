@@ -6,6 +6,8 @@ import Loading from "../../components/Loading";
 import MyPagination from "../../components/Pagination";
 import { map } from "lodash";
 import { message, Col, Row } from "antd";
+import { Parallax } from "rc-scroll-anim";
+
 //Firebase
 import firebase from "../../utils/FireBase";
 import "firebase/firestore";
@@ -66,7 +68,12 @@ export default function Topics() {
             <Loading />
           ) : (
             currentList.map((topic, index) => (
-              <Topic key={index} topic={topic} />
+              <Parallax
+                animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
+                style={{ transform: "translateX(-100px)", opacity: 0 }}
+              >
+                <Topic key={index} topic={topic} />
+              </Parallax>
             ))
           )}
           <MyPagination

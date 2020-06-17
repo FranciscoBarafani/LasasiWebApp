@@ -5,6 +5,7 @@ import MyFooter from "../../components/Footer";
 import MyBanner from "../../components/Banner";
 import { BackTop, Avatar } from "antd";
 import { WhatsAppOutlined } from "@ant-design/icons";
+import { Parallax } from "rc-scroll-anim";
 //Routes
 import MainRoutes from "../../routes/MainRoutes";
 //Background
@@ -42,8 +43,20 @@ export default function MainLayout() {
           }
         />
       </a>
+      <Parallax
+        animation={[
+          { y: 0, opacity: 1, playScale: [0, 0.2] },
+          { blur: "10px", playScale: [0, 0.5] },
+        ]}
+        style={{
+          transform: "translateY(50px)",
+          filter: "blur(0px)",
+          opacity: 0,
+        }}
+      >
+        <MyFooter />
+      </Parallax>
       <BackTop />
-      <MyFooter />
     </div>
   );
 }

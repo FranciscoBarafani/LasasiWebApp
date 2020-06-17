@@ -15,6 +15,7 @@
     "moment": "^2.25.3",
     "node-sass": "^4.13.1",
     "nodemailer": "^6.4.6",
+    "rc-scroll-anim": "^2.7.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",

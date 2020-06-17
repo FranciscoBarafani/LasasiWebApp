@@ -1,9 +1,10 @@
 //Essentials
 import React from "react";
-import "./home.scss";
 //Components
 import HomeText from "../../components/HomeText";
 import { Col, Row } from "antd";
+
+import "./home.scss";
 
 export default function Home() {
   return (
