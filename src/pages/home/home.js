@@ -4,7 +4,12 @@ import React from "react";
 import { Col, Row } from "antd";
 import { Parallax } from "rc-scroll-anim";
 //Images
-import Imagen from "../../assets/images/seminar.svg";
+import SeminarImg from "../../assets/images/seminar.svg";
+import SchoolImg from "../../assets/images/colegio.svg";
+import ForumImg from "../../assets/images/apoyo.svg";
+import TallerImg from "../../assets/images/compartir.svg";
+import VinculoImg from "../../assets/images/acuerdo.svg";
+import AvionImg from "../../assets/images/avion.svg";
 
 import "./home.scss";
 
@@ -14,6 +19,7 @@ export default function Home() {
       <Row justify="center" style={{ padding: "5vh 10vh" }}>
         <Row>
           <Parallax
+            always={false}
             animation={[
               { y: 0, opacity: 1, playScale: [0, 0.2] },
               { blur: "0px", playScale: [0, 0.5] },
@@ -27,17 +33,21 @@ export default function Home() {
             <h1>Qué es LASASI?</h1>
           </Parallax>
         </Row>
-        <Row>
+        <Row align="center" justify="middle">
           <Col span={12}>
             <Parallax
+              always={false}
               animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(-100px)", opacity: 0 }}
             >
-              Imagen
+              <div className="avionImgContainer">
+                <img src={AvionImg} alt="avion" height={200} width={200} />
+              </div>
             </Parallax>
           </Col>
           <Col span={12}>
             <Parallax
+              always={false}
               animation={{ x: -0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(100px)", opacity: 0 }}
             >
@@ -47,6 +57,7 @@ export default function Home() {
         </Row>
         <Row justify="center">
           <Parallax
+            always={false}
             animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
             style={{ transform: "translateX(-100px)", opacity: 0 }}
           >
@@ -54,6 +65,7 @@ export default function Home() {
           </Parallax>
           <div className="text1">
             <Parallax
+              always={false}
               animation={{ x: -0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(100px)", opacity: 0 }}
             >
@@ -63,26 +75,34 @@ export default function Home() {
         </Row>
         <Row>
           <Parallax
+            always={false}
             animation={{ y: 0, opacity: 1, playScale: [0.4, 0.8] }}
             style={{ transform: "translateY(-100px)", opacity: 0 }}
           >
             <h1>Beneficios</h1>
           </Parallax>
         </Row>
-        <Row>
+        <Row align="middle">
           <Col span={12}>
             <Parallax
+              always={false}
               animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(-100px)", opacity: 0 }}
             >
               <div className="seminarImgContainer">
-                <img src={Imagen} alt="Seminario" width={300} height={300} />
+                <img
+                  src={SeminarImg}
+                  alt="Seminario"
+                  width={300}
+                  height={300}
+                />
               </div>
             </Parallax>
           </Col>
           <Col span={12}>
             <div className="ben1">
               <Parallax
+                always={false}
                 animation={{ x: -0, opacity: 1, playScale: [0.3, 0.5] }}
                 style={{ transform: "translateX(100px)", opacity: 0 }}
               >
@@ -92,38 +112,79 @@ export default function Home() {
             </div>
           </Col>
         </Row>
-        <Row justify="center">
-          <Parallax
-            animation={{ x: -0, opacity: 1, playScale: [0.5, 0.8] }}
-            style={{ transform: "translateX(100px)", opacity: 0 }}
-          >
-            <h2 className="title">Programa Taller “Reachout”</h2>
-            <h2>{ben2}</h2>
-          </Parallax>
+        <Row justify="center" align="middle">
+          <Col span={6}>
+            <Parallax
+              always={false}
+              animation={{ opacity: 1, playScale: [0.1, 0.8] }}
+              style={{ opacity: 0 }}
+            >
+              <div className="tallerImgContainer">
+                <img src={TallerImg} alt="taller" />
+              </div>
+            </Parallax>
+          </Col>
+          <Col span={18}>
+            <Parallax
+              always={false}
+              animation={{ x: -0, opacity: 1, playScale: [0.1, 0.8] }}
+              style={{ transform: "translateX(100px)", opacity: 0 }}
+            >
+              <h2 className="title">Programa Taller “Reachout”</h2>
+              <h2>{ben2}</h2>
+            </Parallax>
+          </Col>
         </Row>
-        <Row>
-          <Parallax
-            animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
-            style={{ transform: "translateX(-100px)", opacity: 0 }}
-          >
-            <h2 className="title">Publicación oficial de ISASI “FORUM”</h2>
-            <h2>{ben3}</h2>
-          </Parallax>
+        <Row align="middle">
+          <Col span={18}>
+            <Parallax
+              always={false}
+              animation={{ x: 0, opacity: 1, playScale: [0.1, 0.4] }}
+              style={{ transform: "translateX(-100px)", opacity: 0 }}
+            >
+              <h2 className="title">Publicación oficial de ISASI “FORUM”</h2>
+              <h2>{ben3}</h2>
+            </Parallax>
+          </Col>
+          <Col span={6}>
+            <Parallax
+              always={false}
+              animation={{ opacity: 1, playScale: [0.1, 0.4] }}
+              style={{ opacity: 0 }}
+            >
+              <div className="forumImgContainer">
+                <img src={ForumImg} alt={"Foro"} width={100} height={100} />
+              </div>
+            </Parallax>
+          </Col>
         </Row>
-        <Row justify="space-between">
+        <Row justify="space-between" align="middle">
           <Col span={10}>
             <Parallax
+              always={false}
               animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(-100px)", opacity: 0 }}
             >
               <h2 className="title">
-                Becas del Memorial ISASI Rudolf Kapustin:{" "}
+                Becas del Memorial ISASI Rudolf Kapustin:
               </h2>
               <h2>{ben4}</h2>
             </Parallax>
           </Col>
+          <Col span={4}>
+            <Parallax
+              always={false}
+              animation={{ opacity: 1, playScale: [0.0, 0.5] }}
+              style={{ opacity: 0 }}
+            >
+              <div className="schoolImgContainer">
+                <img src={SchoolImg} alt="colegio" width={100} height={100} />
+              </div>
+            </Parallax>
+          </Col>
           <Col span={10}>
             <Parallax
+              always={false}
               animation={{ x: -0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(100px)", opacity: 0 }}
             >
@@ -134,6 +195,7 @@ export default function Home() {
         </Row>
         <Row>
           <Parallax
+            always={false}
             animation={{ y: 0, opacity: 1, playScale: [0.5, 0.8] }}
             style={{ transform: "translateY(-100px)", opacity: 0 }}
           >
@@ -141,12 +203,24 @@ export default function Home() {
             <h2>{ben6}</h2>
           </Parallax>
         </Row>
+        <Row style={{ marginTop: 0, marginBottom: 0 }}>
+          <Parallax
+            always={false}
+            animation={{ opacity: 1, playScale: [0.2, 0.4] }}
+            style={{ opacity: 0 }}
+          >
+            <div className="vinculoImgContainer">
+              <img src={VinculoImg} alt="vinculo" />
+            </div>
+          </Parallax>
+        </Row>
         <Row>
           <Parallax
-            animation={{ y: -0, opacity: 1, playScale: [0.1, 0.5] }}
+            always={false}
+            animation={{ y: -0, opacity: 1, playScale: [0, 0.3] }}
             style={{ transform: "translateY(100px)", opacity: 0 }}
           >
-            <h2>{syntax}</h2>
+            <h2 style={{ color: "rgb(34, 117, 68)" }}>{syntax}</h2>
           </Parallax>
         </Row>
       </Row>

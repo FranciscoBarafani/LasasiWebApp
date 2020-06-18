@@ -23,6 +23,26 @@
     justify-content: center;
   }
 
+  .avionImgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .schoolImgContainer,
+  .forumImgContainer,
+  .tallerImgContainer,
+  .vinculoImgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   .ant-row {
     margin: 50px 0 50px 0px;
   }
