@@ -10,6 +10,7 @@ import ForumImg from "../../assets/images/apoyo.svg";
 import TallerImg from "../../assets/images/compartir.svg";
 import VinculoImg from "../../assets/images/acuerdo.svg";
 import AvionImg from "../../assets/images/avion.svg";
+import DownArrowImg from "../../assets/images/flecha-hacia-abajo.svg";
 
 import "./home.scss";
 
@@ -17,26 +18,26 @@ export default function Home() {
   return (
     <div className="home">
       <Row justify="center" style={{ padding: "5vh 10vh" }}>
-        <Row>
-          <Parallax
-            always={false}
-            animation={[
-              { y: 0, opacity: 1, playScale: [0, 0.2] },
-              { blur: "0px", playScale: [0, 0.5] },
-            ]}
-            style={{
-              transform: "translateY(50px)",
-              filter: "blur(0px)",
-              opacity: 0,
-            }}
-          >
-            <h1>Qué es LASASI?</h1>
-          </Parallax>
+        <Row justify="center" align="top">
+          <div className="quienesSomosContainer">
+            <h1>Quienes Somos?</h1>
+            <Parallax
+              animation={[{ y: 50, opacity: 0, playScale: [0.2, 0.7] }]}
+              style={{
+                transform: "translateY(0px)",
+                opacity: 1,
+              }}
+            >
+              <div className="downArrowImgContainer">
+                <img src={DownArrowImg} alt="flecha" />
+              </div>
+            </Parallax>
+          </div>
         </Row>
+        <Row></Row>
         <Row align="center" justify="middle">
           <Col span={12}>
             <Parallax
-              always={false}
               animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(-100px)", opacity: 0 }}
             >
@@ -47,7 +48,6 @@ export default function Home() {
           </Col>
           <Col span={12}>
             <Parallax
-              always={false}
               animation={{ x: -0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(100px)", opacity: 0 }}
             >
@@ -215,13 +215,15 @@ export default function Home() {
           </Parallax>
         </Row>
         <Row>
-          <Parallax
-            always={false}
-            animation={{ y: -0, opacity: 1, playScale: [0, 0.3] }}
-            style={{ transform: "translateY(100px)", opacity: 0 }}
-          >
-            <h2 style={{ color: "rgb(34, 117, 68)" }}>{syntax}</h2>
-          </Parallax>
+          <Col span={18} offset="3">
+            <Parallax
+              always={false}
+              animation={{ y: -0, opacity: 1, playScale: [0, 0.3] }}
+              style={{ transform: "translateY(100px)", opacity: 1 }}
+            >
+              <h2 style={{ color: "rgb(34, 117, 68)" }}>{syntax}</h2>
+            </Parallax>
+          </Col>
         </Row>
       </Row>
     </div>
@@ -229,7 +231,7 @@ export default function Home() {
 }
 
 const text1 =
-  "Es la asociación regional que nuclea a profesionales y especialistas de la comunidad Latinoamericana dedicada a la investigación de accidentes y de seguridad operacional. LASASI es una de las tantas asociaciones que conforman ISASI alrededor del mundo. ";
+  "Somos la asociación regional que nuclea a profesionales y especialistas de la comunidad Latinoamericana dedicada a la investigación de accidentes y de seguridad operacional. LASASI es una de las tantas asociaciones que conforman ISASI alrededor del mundo. ";
 const text2 =
   "Es el reflejo del compromiso personal, el de su empresa u organización con la seguridad operacional en la aviación de nuestra región, con proyección global, a través del apoyo con los recursos necesarios, intelectuales,  materiales y de experiencia para el mejoramiento continuo de los procesos de investigación y en la gestión de riesgos con la finalidad de contribuir a la mejora continua de la seguridad operacional.";
 const ben1 =
