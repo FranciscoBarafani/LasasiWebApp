@@ -8,8 +8,10 @@ import "./Footer.scss";
 export default function MyFooter() {
   return (
     <div className="footer">
-      <h1>On Progress</h1>
-      <h3>Francisco Barafani Copyright</h3>
+      <h1>In Progress</h1>
+      <h3>
+        This site is being developed by Francisco Barafani, all rights reserved.
+      </h3>
     </div>
   );
 }

@@ -61,7 +61,7 @@ export default function Home() {
             animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
             style={{ transform: "translateX(-100px)", opacity: 0 }}
           >
-            <h1>Ser miembro de LASASI</h1>
+            <h1>Ser miembro de LARSASI</h1>
           </Parallax>
           <div className="text1">
             <Parallax
@@ -231,11 +231,11 @@ export default function Home() {
 }
 
 const text1 =
-  "Somos la asociación regional que nuclea a profesionales y especialistas de la comunidad Latinoamericana dedicada a la investigación de accidentes y de seguridad operacional. LASASI es una de las tantas asociaciones que conforman ISASI alrededor del mundo. ";
+  "Somos la asociación regional que nuclea a profesionales y especialistas de la comunidad Latinoamericana dedicada a la investigación de accidentes y de seguridad operacional. LARSASI es una de las tantas asociaciones que conforman ISASI alrededor del mundo. ";
 const text2 =
   "Es el reflejo del compromiso personal, el de su empresa u organización con la seguridad operacional en la aviación de nuestra región, con proyección global, a través del apoyo con los recursos necesarios, intelectuales,  materiales y de experiencia para el mejoramiento continuo de los procesos de investigación y en la gestión de riesgos con la finalidad de contribuir a la mejora continua de la seguridad operacional.";
 const ben1 =
-  "A través de los años, se ha convertido en uno de los eventos más importantes para los profesionales en investigación de accidentes y de la seguridad operacional de la aviación de alcance global. En dicho seminario se realizan presentaciones valiosas y vanguardistas. La dinámica del seminario es un día completo de debates sobre ejes de la seguridad operacional actuales y tres días de presentaciones de diversas temáticas, desarrolladas por expertos de renombre internacional y miembros de LASASI-ISASI que hayan desarrollado trabajos relacionados a las temáticas propuestas para cada Seminario.";
+  "A través de los años, se ha convertido en uno de los eventos más importantes para los profesionales en investigación de accidentes y de la seguridad operacional de la aviación de alcance global. En dicho seminario se realizan presentaciones valiosas y vanguardistas. La dinámica del seminario es un día completo de debates sobre ejes de la seguridad operacional actuales y tres días de presentaciones de diversas temáticas, desarrolladas por expertos de renombre internacional y miembros de LARSASI-ISASI que hayan desarrollado trabajos relacionados a las temáticas propuestas para cada Seminario.";
 const ben2 =
   "Instituido para proporcionar seminarios de bajo costo, orientados a temas específicos y patrocinados localmente. Estos talleres brindan a nuestros miembros una oportunidad única para trabajar cuestiones de investigación y seguridad operacional en las áreas donde se hayan presentado alertas, que deben ser abordadas en forma inmediata y orientar nuestros esfuerzos.";
 const ben3 =
@@ -245,6 +245,6 @@ const ben4 =
 const ben5 =
   "Para estudiantes es una oportunidad para promover vínculos con los estudiantes universitarios interesados en carreras asociadas a la investigación y seguridad operacional.";
 const ben6 =
-  "Los miembros socios individuales o corporativos representan a 70 países y son un grupo diverso que trabaja en todas las áreas de la industria de la aviación. Esto presenta una oportunidad única para generar vínculos de intercambio dentro del ámbito profesional. Ser miembro de LASASI-ISASI es también una excelente plataforma para darse a conocer a la comunidad aeronáutica. ";
+  "Los miembros socios individuales o corporativos representan a 70 países y son un grupo diverso que trabaja en todas las áreas de la industria de la aviación. Esto presenta una oportunidad única para generar vínculos de intercambio dentro del ámbito profesional. Ser miembro de LARSASI-ISASI es también una excelente plataforma para darse a conocer a la comunidad aeronáutica. ";
 const syntax =
-  "En síntesis, LASASI -ISASI es el lugar en donde confluyen quienes se dedican, día a día, a contribuir en la mejora de la seguridad operacional de la aviación en la región y en el mundo; a través de la investigación de accidentes y de la seguridad operacional.";
+  "En síntesis, LARSASI -ISASI es el lugar en donde confluyen quienes se dedican, día a día, a contribuir en la mejora de la seguridad operacional de la aviación en la región y en el mundo; a través de la investigación de accidentes y de la seguridad operacional.";
