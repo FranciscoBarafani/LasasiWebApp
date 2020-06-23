@@ -15,61 +15,55 @@ import "./MainLayout.scss";
 
 export default function MainLayout() {
   return (
-    <Row>
-      <div
-        className="main-layout"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      >
-        <Row
-          align="middle"
-          justify="center"
-          style={{ backgroundColor: "white" }}
-        >
-          <MyBanner />
-        </Row>
+    <div
+      className="main-layout"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
+      <Row align="middle" justify="center" style={{ backgroundColor: "white" }}>
+        <MyBanner />
+      </Row>
 
-        <TopMenu />
-        <Row align="middle" justify="center">
-          <MainRoutes />
-          <a
-            href="https://wa.me/5493517862670"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Avatar
-              size={60}
-              shape="circle"
-              icon={
-                <WhatsAppOutlined
-                  style={{ color: "white", backgroundColor: "transparent" }}
-                />
-              }
-            />
-          </a>
-        </Row>
-        <Row align="middle" justify="center">
-          <Parallax
-            animation={[
-              { y: 0, opacity: 1, playScale: [0, 0.2] },
-              { blur: "0px", playScale: [0, 0.5] },
-            ]}
-            style={{
-              transform: "translateY(50px)",
-              filter: "blur(0px)",
-              opacity: 0,
-            }}
-          >
-            <MyFooter />
-          </Parallax>
-        </Row>
-        <BackTop />
-      </div>
-    </Row>
+      <TopMenu />
+      <Row align="middle" justify="center">
+        <MainRoutes />
+        <a
+          href="https://wa.me/5493517862670"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Avatar
+            size={60}
+            shape="circle"
+            icon={
+              <WhatsAppOutlined
+                style={{ color: "white", backgroundColor: "transparent" }}
+              />
+            }
+          />
+        </a>
+      </Row>
+      <Row align="middle" justify="center">
+        <Parallax
+          animation={[
+            { y: 0, opacity: 1, playScale: [0, 0.2] },
+            { blur: "0px", playScale: [0, 0.5] },
+          ]}
+          style={{
+            transform: "translateY(50px)",
+            filter: "blur(0px)",
+            opacity: 0,
+          }}
+        >
+          <MyFooter />
+        </Parallax>
+      </Row>
+      <BackTop />
+    </div>
   );
 }
