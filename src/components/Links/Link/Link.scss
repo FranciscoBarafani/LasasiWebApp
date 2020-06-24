@@ -1,12 +1,14 @@
 .link {
   display: flex;
   flex-direction: column;
-  margin: 5px;
-  padding: 5px 5px 5px 20px;
+  margin: 5px 0px;
+  padding: 5px 5px 5px 5px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   border: solid 2px rgba(90, 90, 90, 0.8);
-  min-width: 500px;
+  max-width: 500px;
+  width: 100%;
+  align-items: center;
 
   h2,
   h3 {

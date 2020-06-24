@@ -17,8 +17,8 @@ import "./home.scss";
 export default function Home() {
   return (
     <div className="home">
-      <Row justify="center" style={{ padding: "5vh 10vh" }}>
-        <Row justify="center" align="top">
+      <Row justify="center">
+        <Row justify="center" align="top" gutter={[8, 0]}>
           <div className="quienesSomosContainer">
             <h1>Quienes Somos?</h1>
             <Parallax
@@ -34,9 +34,8 @@ export default function Home() {
             </Parallax>
           </div>
         </Row>
-        <Row></Row>
-        <Row align="center" justify="middle">
-          <Col span={12}>
+        <Row align="center" justify="middle" gutter={[8, 0]}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <Parallax
               animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(-100px)", opacity: 0 }}
@@ -46,7 +45,7 @@ export default function Home() {
               </div>
             </Parallax>
           </Col>
-          <Col span={12}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <Parallax
               animation={{ x: -0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(100px)", opacity: 0 }}
@@ -55,7 +54,7 @@ export default function Home() {
             </Parallax>
           </Col>
         </Row>
-        <Row justify="center">
+        <Row justify="center" gutter={[8, 0]}>
           <Parallax
             always={false}
             animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
@@ -82,24 +81,19 @@ export default function Home() {
             <h1>Beneficios</h1>
           </Parallax>
         </Row>
-        <Row align="middle">
-          <Col span={12}>
+        <Row align="middle" gutter={[8, 0]}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <Parallax
               always={false}
               animation={{ x: 0, opacity: 1, playScale: [0.3, 0.5] }}
               style={{ transform: "translateX(-100px)", opacity: 0 }}
             >
               <div className="seminarImgContainer">
-                <img
-                  src={SeminarImg}
-                  alt="Seminario"
-                  width={300}
-                  height={300}
-                />
+                <img src={SeminarImg} alt="Seminario" />
               </div>
             </Parallax>
           </Col>
-          <Col span={12}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className="ben1">
               <Parallax
                 always={false}
@@ -112,7 +106,7 @@ export default function Home() {
             </div>
           </Col>
         </Row>
-        <Row justify="center" align="middle">
+        <Row justify="center" align="middle" gutter={[8, 0]}>
           <Col span={6}>
             <Parallax
               always={false}
@@ -135,7 +129,7 @@ export default function Home() {
             </Parallax>
           </Col>
         </Row>
-        <Row align="middle">
+        <Row align="middle" gutter={[8, 0]}>
           <Col span={18}>
             <Parallax
               always={false}
@@ -158,7 +152,7 @@ export default function Home() {
             </Parallax>
           </Col>
         </Row>
-        <Row justify="space-between" align="middle">
+        <Row justify="space-between" align="middle" gutter={[8, 0]}>
           <Col span={10}>
             <Parallax
               always={false}
@@ -193,7 +187,7 @@ export default function Home() {
             </Parallax>
           </Col>
         </Row>
-        <Row>
+        <Row gutter={[8, 0]}>
           <Parallax
             always={false}
             animation={{ y: 0, opacity: 1, playScale: [0.5, 0.8] }}
@@ -203,7 +197,7 @@ export default function Home() {
             <h2>{ben6}</h2>
           </Parallax>
         </Row>
-        <Row style={{ marginTop: 0, marginBottom: 0 }}>
+        <Row gutter={[8, 0]}>
           <Parallax
             always={false}
             animation={{ opacity: 1, playScale: [0.2, 0.4] }}
@@ -214,7 +208,7 @@ export default function Home() {
             </div>
           </Parallax>
         </Row>
-        <Row>
+        <Row gutter={[8, 0]}>
           <Col span={18} offset="3">
             <Parallax
               always={false}

@@ -14,7 +14,7 @@ export default function MyCalendar(props) {
         width="800"
         height="600"
         frameborder="0"
-        scrolling="no"
+        scrolling="yes"
       ></iframe>
     </div>
   );

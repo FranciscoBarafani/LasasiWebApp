@@ -28,7 +28,6 @@ export default function MainLayout() {
       <Row align="middle" justify="center" style={{ backgroundColor: "white" }}>
         <MyBanner />
       </Row>
-
       <TopMenu />
       <Row align="middle" justify="center">
         <MainRoutes />

@@ -9,8 +9,8 @@ import { Row, Col } from "antd";
 export default function Contact() {
   return (
     <div className="contact">
-      <Row>
-        <Col offset={7} span={10}>
+      <Row justify="center">
+        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <ContactForm className="contact-form" />
         </Col>
       </Row>

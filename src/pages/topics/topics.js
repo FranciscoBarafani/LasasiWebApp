@@ -62,8 +62,8 @@ export default function Topics() {
 
   return (
     <div className="topics">
-      <Row>
-        <Col span={16} offset={4}>
+      <Row justify="center">
+        <Col xs={24} sm={24} md={16} lg={16} xl={16}>
           {isLoading || !currentList ? (
             <Loading />
           ) : (

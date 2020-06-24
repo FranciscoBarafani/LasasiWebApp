@@ -9,11 +9,11 @@ import "./about.scss";
 export default function About() {
   return (
     <div className="about">
-      <Row align="top" justify="center">
-        <Col span={6}>
+      <Row align="top" justify="space-around">
+        <Col xs={0} sm={0} md={6} lg={6} xl={6}>
           <img src={Imagen} alt="Mundo" />
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <h2>
             El mundo se encuentra en un proceso de transición, y la aviación no
             es la excepción. Indefectiblemente debe redefinirse de cara a esta
