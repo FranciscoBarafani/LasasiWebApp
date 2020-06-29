@@ -9,10 +9,9 @@ export default function MyCalendar(props) {
   return (
     <div className="calendar">
       <iframe
+        className="calendar-iframe"
         title="Calendario"
         src={source}
-        width="800"
-        height="600"
         frameborder="0"
         scrolling="yes"
       ></iframe>

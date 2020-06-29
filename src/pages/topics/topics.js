@@ -1,9 +1,10 @@
 //Essentials
 import React, { useEffect, useState } from "react";
 //Components
-import Topic from "../../components/Topics/Topic";
 import Loading from "../../components/Loading";
+import TopicList from "../../components/Topics/TopicList";
 import MyPagination from "../../components/Pagination";
+import { each } from "async";
 import { map } from "lodash";
 import { message, Col, Row } from "antd";
 
@@ -29,17 +30,19 @@ export default function Topics() {
       .get()
       .then((response) => {
         const topics = [];
-        map(response.docs, (topic) => {
-          const data = topic.data();
-          data.key = topic.id;
-          topics.push(data);
-        });
-        setTopics(topics);
-        setIsLoading(false);
-      })
-      .catch(() => {
-        message.error("Error al obtener tópicos, intentelo mas tarde.");
-        setIsLoading(false);
+        each(
+          response.docs,
+          (topic, callback) => {
+            const data = topic.data();
+            data.key = topic.id;
+            topics.push(data);
+            callback();
+          },
+          () => {
+            setTopics(topics);
+            setIsLoading(false);
+          }
+        );
       });
   }, []);
 
@@ -63,13 +66,11 @@ export default function Topics() {
   return (
     <div className="topics">
       <Row justify="center">
-        <Col xs={24} sm={24} md={16} lg={16} xl={16}>
+        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           {isLoading || !currentList ? (
             <Loading />
           ) : (
-            currentList.map((topic, index) => (
-              <Topic key={index} topic={topic} />
-            ))
+            <TopicList data={currentList} />
           )}
           <MyPagination
             totalItems={totalItems}

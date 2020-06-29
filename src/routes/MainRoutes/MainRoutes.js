@@ -9,6 +9,7 @@ import Home from "../../pages/home";
 import Links from "../../pages/links";
 import Topics from "../../pages/topics";
 import Error404 from "../../pages/error404";
+import TopicView from "../../pages/topicView";
 
 export default function MainRoutes() {
   return (
@@ -30,6 +31,9 @@ export default function MainRoutes() {
       </Route>
       <Route path="/main/topics" exact>
         <Topics />
+      </Route>
+      <Route path="/main/topics/:id" exact>
+        <TopicView />
       </Route>
       <Route path="*">
         <Error404 />
