@@ -20,13 +20,13 @@ export default function About() {
             nueva era en la que entramos. Somos la asociación regional que
             nuclea a profesionales y especialistas de la comunidad
             Latinoamericana dedicada a la investigación de accidentes y de
-            seguridad operacional. LARSASI es una de las tantas asociaciones que
-            conforman ISASI alrededor del mundo. En LARSASI empezamos a trabajar
+            seguridad operacional. LASASI es una de las tantas asociaciones que
+            conforman ISASI alrededor del mundo. En LASASI empezamos a trabajar
             en el armado, construcción y fortalecimiento de la Asociación de
             ISASI para la región, para abordar lo relacionado a: investigación
             de accidentes de aviación, seguridad operacional, los nuevos
             desafíos de la industria y también poder ampliar y facilitar la
-            capacitación de los miembros de LARSASI. Poder presentar trabajos de
+            capacitación de los miembros de LASASI. Poder presentar trabajos de
             nuestra área de expertise; así como tratar temas concurrentes a la
             investigación, compartir experiencias, bibliografía, etc. Zona de
             los archivos adjuntos
