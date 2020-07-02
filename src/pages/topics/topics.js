@@ -5,8 +5,7 @@ import Loading from "../../components/Loading";
 import TopicList from "../../components/Topics/TopicList";
 import MyPagination from "../../components/Pagination";
 import { each } from "async";
-import { map } from "lodash";
-import { message, Col, Row } from "antd";
+import { Col, Row } from "antd";
 
 //Firebase
 import firebase from "../../utils/FireBase";
