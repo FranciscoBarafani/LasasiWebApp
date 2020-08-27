@@ -16,6 +16,8 @@
   }
 
   &:hover {
+    transition: box-shadow ease-in-out 0.2s;
+    box-shadow: 0px 0px 15px rgb(190, 190, 190);
     -webkit-transition: border ease-out 0.3s;
     -moz-transition: border ease-out 0.3s;
     -o-transition: border ease-out 0.3s;

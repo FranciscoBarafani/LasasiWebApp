@@ -9,10 +9,12 @@ export default function TopicCard(props) {
   const { title, author, id } = props;
 
   return (
-    <Link to={`/main/topics/${id}`}>
-      <Card title={title}>
-        <p>Autor: {author}</p>
-      </Card>
-    </Link>
+    <div className="topic-card">
+      <Link to={`/main/topics/${id}`}>
+        <Card title={title}>
+          <p>Autor: {author}</p>
+        </Card>
+      </Link>
+    </div>
   );
 }
