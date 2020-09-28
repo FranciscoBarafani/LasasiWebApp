@@ -14,7 +14,7 @@ export default function MyPagination(props) {
       className="pagination"
       current={currentPage}
       total={totalItems}
-      pageSize={2}
+      pageSize={4}
       onChange={onChangePage}
     />
   );
