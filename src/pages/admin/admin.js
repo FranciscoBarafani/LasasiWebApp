@@ -10,12 +10,13 @@ import { message, Layout } from "antd";
 import SideMenu from "../../components/SideMenu";
 import TopicsManager from "../../components/Topics/TopicsManager";
 import LinksManager from "../../components/Links/LinksManager";
+import MembersManager from "../../components/Members/MembersManager";
 //Login Form
 import LoginForm from "../../forms/LoginForm";
 
 export default function Admin() {
   //Current Logged User
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   //Login
@@ -80,6 +81,9 @@ function AdminMenu(props) {
             </Route>
             <Route path="/admin/manage-links">
               <LinksManager />
+            </Route>
+            <Route path="/admin/manage-members">
+              <MembersManager />
             </Route>
           </Switch>
         </Content>

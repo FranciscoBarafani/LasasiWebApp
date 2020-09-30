@@ -27,10 +27,14 @@ export default function SideMenu(props) {
         <Link to="/admin/manage-links">Gestionar Enlaces</Link>
       </Menu.Item>
       <Menu.Item key="3">
+        <LinkOutlined />
+        <Link to="/admin/manage-members">Gestionar Miembros</Link>
+      </Menu.Item>
+      <Menu.Item key="4">
         <SettingOutlined />
         <Link to="/admin/settings">Configuracion</Link>
       </Menu.Item>
-      <Menu.Item key="4">
+      <Menu.Item key="5">
         <LogoutOutlined />
         <Popconfirm
           title="Cerrar sesión?"
