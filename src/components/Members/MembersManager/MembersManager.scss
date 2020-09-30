@@ -1,0 +1,10 @@
+.members-manager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .ant-btn {
+    margin: 50px 0px;
+  }
+}
