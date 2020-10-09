@@ -11,6 +11,7 @@ import SideMenu from "../../components/SideMenu";
 import TopicsManager from "../../components/Topics/TopicsManager";
 import LinksManager from "../../components/Links/LinksManager";
 import MembersManager from "../../components/Members/MembersManager";
+import DocumentsManager from "../../components/Documents/DocumentsManager";
 //Login Form
 import LoginForm from "../../forms/LoginForm";
 
@@ -84,6 +85,9 @@ function AdminMenu(props) {
             </Route>
             <Route path="/admin/manage-members">
               <MembersManager />
+            </Route>
+            <Route path="/admin/manage-documents">
+              <DocumentsManager />
             </Route>
           </Switch>
         </Content>

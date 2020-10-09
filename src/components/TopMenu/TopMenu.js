@@ -12,6 +12,7 @@ import {
   LinkOutlined,
   InfoCircleOutlined,
   MailOutlined,
+  FilePdfOutlined,
 } from "@ant-design/icons";
 
 //This component renders the top menu with the asigned links
@@ -27,6 +28,10 @@ export default function TopMenu() {
         <Menu.Item>
           <FileTextOutlined />
           <Link to="/main/topics">Topicos</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <FilePdfOutlined />
+          <Link to="/main/documents">Documentos</Link>
         </Menu.Item>
         <Menu.Item>
           <CalendarOutlined />

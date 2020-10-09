@@ -6,6 +6,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import firebase from "./utils/FireBase";
 
 //Main Pages
 import MainLayout from "./layouts/MainLayout";
@@ -13,6 +14,8 @@ import MainLayout from "./layouts/MainLayout";
 import Admin from "./pages/admin";
 
 export default function App() {
+  firebase.auth().signInAnonymously();
+
   return (
     <Router>
       <Switch>

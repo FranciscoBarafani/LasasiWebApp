@@ -50,7 +50,7 @@ export default function Topics() {
     if (!isLoading || topics) {
       setTotalItems(topics.length);
       //Assigning starting page as 1
-      setCurrentList(topics.slice(0, 2));
+      setCurrentList(topics.slice(0, 4));
     }
   }, [topics, isLoading]);
 

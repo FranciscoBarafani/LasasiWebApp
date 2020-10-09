@@ -10,6 +10,7 @@ import {
   SettingOutlined,
   LogoutOutlined,
   UserOutlined,
+  FilePdfOutlined,
 } from "@ant-design/icons";
 
 import "./SideMenu.scss";
@@ -24,18 +25,22 @@ export default function SideMenu(props) {
         <Link to="/admin/manage-topics">Gestionar Topicos</Link>
       </Menu.Item>
       <Menu.Item key="2">
+        <FilePdfOutlined />
+        <Link to="/admin/manage-documents">Gestionar Documentos</Link>
+      </Menu.Item>
+      <Menu.Item key="3">
         <LinkOutlined />
         <Link to="/admin/manage-links">Gestionar Enlaces</Link>
       </Menu.Item>
-      <Menu.Item key="3">
+      <Menu.Item key="4">
         <UserOutlined />
         <Link to="/admin/manage-members">Gestionar Miembros</Link>
       </Menu.Item>
-      <Menu.Item key="4">
+      <Menu.Item key="5">
         <SettingOutlined />
         <Link to="/admin/settings">Configuracion</Link>
       </Menu.Item>
-      <Menu.Item key="5">
+      <Menu.Item key="6">
         <LogoutOutlined />
         <Popconfirm
           title="Cerrar sesión?"
