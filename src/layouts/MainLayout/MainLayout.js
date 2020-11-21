@@ -6,6 +6,8 @@ import MyBanner from "../../components/Banner";
 import { BackTop, Avatar, Row } from "antd";
 import { WhatsAppOutlined } from "@ant-design/icons";
 import { Parallax } from "rc-scroll-anim";
+//Initial Modal
+import InitialModal from "../../components/InitialModal";
 //Routes
 import MainRoutes from "../../routes/MainRoutes";
 //Background
