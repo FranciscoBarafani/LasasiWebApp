@@ -7,6 +7,10 @@ let initialTopics = {
   totalItems: 0,
   currentPage: 0,
 };
+
+let initialLinks = {
+  links: [{}],
+};
 //REDUCERS
 function topics(state = initialTopics, action) {
   switch (action.type) {
@@ -35,6 +39,18 @@ function topics(state = initialTopics, action) {
   }
 }
 
-const reducers = combineReducers({ topics });
+function links(state = initialLinks, action) {
+  switch (action.type) {
+    case actions.SET_LINKS:
+      return {
+        ...state,
+        links: action.payload,
+      };
+    default:
+      return state;
+  }
+}
+
+const reducers = combineReducers({ topics, links });
 
 export default reducers;

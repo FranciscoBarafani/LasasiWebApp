@@ -9,6 +9,9 @@ const initialState = {
     totalItems: 0,
     currentPage: 0,
   },
+  links: {
+    links: [{}],
+  },
 };
 
 const store = createStore(

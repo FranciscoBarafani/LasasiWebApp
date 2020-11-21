@@ -28,3 +28,10 @@ export const changeTopicsPage = (state) => {
     payload: state,
   };
 };
+
+export const getLinks = (state) => {
+  return {
+    type: actions.SET_LINKS,
+    payload: state,
+  };
+};

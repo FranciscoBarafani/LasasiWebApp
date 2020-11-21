@@ -5,6 +5,9 @@ import MyLink from "../../components/Links/Link";
 import Loading from "../../components/Loading";
 import { message, Col, Row } from "antd";
 import { map } from "lodash";
+//REDUX
+import { connect, useDispatch } from "react-redux";
+import { getLinks } from "../../redux/actions/actions";
 //Firebase
 import firebase from "../../utils/FireBase";
 import "firebase/firestore";
@@ -13,25 +16,32 @@ import "./links.scss";
 
 const db = firebase.firestore(firebase);
 
-export default function Links() {
-  const [links, setLinks] = useState(null);
+function Links(props) {
+  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
 
   //This function gets all links
   useEffect(() => {
-    db.collection("links")
-      .get()
-      .then((response) => {
-        const linksArray = [];
-        map(response.docs, (doc) => {
-          const data = doc.data();
-          data.id = doc.id;
-          linksArray.push(data);
+    if (props.links.length <= 1) {
+      setIsLoading(true);
+      const linksArray = [];
+      db.collection("links")
+        .get()
+        .then((response) => {
+          map(response.docs, (doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            linksArray.push(data);
+          });
+        })
+        .catch(() => {
+          message.error("Error al obtener enlaces, intentelo nuevamente.");
+        })
+        .finally(() => {
+          dispatch(getLinks(linksArray));
+          setIsLoading(false);
         });
-        setLinks(linksArray);
-      })
-      .catch(() => {
-        message.error("Error al obtener enlaces, intentelo nuevamente.");
-      });
+    }
   }, []);
 
   return (
@@ -45,15 +55,25 @@ export default function Links() {
       </Row>
       <Row justify="center">
         <Col>
-          {links ? (
-            map(links, (link) => (
+          {isLoading ? (
+            <Loading />
+          ) : (
+            map(props.links, (link) => (
               <MyLink name={link.name} link={link.link} key={link.key} />
             ))
-          ) : (
-            <Loading />
           )}
         </Col>
       </Row>
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  links: state.links.links,
+});
+
+const mapDispatchToProps = {
+  getLinks,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Links);
