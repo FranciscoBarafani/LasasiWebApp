@@ -65,6 +65,7 @@ export default function MainLayout() {
         </Parallax>
       </Row>
       <BackTop />
+      <InitialModal />
     </div>
   );
 }
