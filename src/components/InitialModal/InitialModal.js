@@ -5,7 +5,7 @@ import WebinarImage from "../../assets/images/WebinarLAMIA.jpeg";
 
 import "./InitialModal.scss";
 export default function InitialModal() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const password = "lasasi2020";

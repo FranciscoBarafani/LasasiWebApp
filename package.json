@@ -14,7 +14,7 @@
     "interweave": "^12.5.0",
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
-    "node-sass": "^4.13.1",
+    "sass": "^1.32.12",
     "nodemailer": "^6.4.6",
     "rc-scroll-anim": "^2.7.4",
     "react": "^16.13.1",
